@@ -5,5 +5,6 @@
     iosevka
     yazi
     bat
+    ripgrep
   ];
 }

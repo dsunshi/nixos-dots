@@ -7,6 +7,9 @@ vim.pack.add {
     { src = 'https://github.com/mrcjkb/haskell-tools.nvim' }, -- Mason requires GHCup which is not available on Nix, hence this instead
     -- Colorscheme
     { src = 'https://github.com/catppuccin/nvim' },
+    -- Telescope
+    { src = 'https://github.com/nvim-telescope/telescope.nvim' },
+    { src = 'https://github.com/nvim-lua/plenary.nvim' },
 }
 
 require('mason').setup()
@@ -15,6 +18,7 @@ require('mason-tool-installer').setup({
     ensure_installed = {
         "hlint",
         "rust_analyzer",
+        "pylyzer",
     }
 })
 
@@ -39,3 +43,9 @@ opt.smarttab       = true                          -- <tab>/<BS> indent/dedent i
 
 -- Colorscheme
 vim.cmd.colorscheme "catppuccin-mocha"
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })

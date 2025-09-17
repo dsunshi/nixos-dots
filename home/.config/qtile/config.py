@@ -2,7 +2,7 @@ import os
 
 import libqtile.resources
 from libqtile import bar, layout, qtile, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 # from libqtile.utils import guess_terminal
 
@@ -98,6 +98,27 @@ for i in groups:
             #     desc="move focused window to group {}".format(i.name)),
         ]
     )
+
+groups.append(
+    ScratchPad(
+        'scratchpad',
+        [
+            DropDown(
+                'term',
+                terminal,
+                width=0.4,
+                height=0.5,
+                x=0.3,
+                y=0.1,
+                opacity=1
+            ),
+        ]
+    )
+)
+
+keys.extend([
+    Key(["control"], "1", lazy.group['scratchpad'].dropdown_toggle('term')),
+])
 
 layouts = [
     layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),

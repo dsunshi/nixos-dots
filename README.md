@@ -21,3 +21,10 @@ yay -S gchup-hs-bin
 
 sudo pacman -S extra/ghostty
 ```
+
+### GHCup paths
+
+```bash
+set -U fish_user_paths ~/.cabal/bin $fish_user_paths
+set -U fish_user_paths ~/.ghcup/bin $fish_user_paths
+```

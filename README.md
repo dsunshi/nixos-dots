@@ -14,6 +14,7 @@ cd ..
 rm -rf yay-bin
 
 sudo pacman -S stow
+sudo pacman -S yazi
 sudo pacman -S neovim-nightly-bin
 sudo pacman -S cachyos-gaming-meta
 

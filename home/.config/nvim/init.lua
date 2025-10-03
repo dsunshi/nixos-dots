@@ -12,14 +12,18 @@ vim.pack.add {
     -- Telescope
     { src = 'https://github.com/nvim-telescope/telescope.nvim' },
     { src = 'https://github.com/nvim-lua/plenary.nvim' },
+    --
+    { src = 'https://github.com/OXY2DEV/markview.nvim' },
+    { src = 'https://github.com/folke/which-key.nvim' },
+    { src = 'https://github.com/mrcjkb/haskell-tools.nvim' },
 }
 
 require('mason').setup()
 require('mason-lspconfig').setup()
 require('mason-tool-installer').setup({
     ensure_installed = {
-        "hlint",
-        "hls",
+        -- "hlint",
+        -- "hls",
         "rust_analyzer",
         "pylyzer",
     }

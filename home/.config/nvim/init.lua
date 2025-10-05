@@ -11,11 +11,13 @@ vim.pack.add {
     { src = 'https://github.com/catppuccin/nvim' },
     -- Telescope
     { src = 'https://github.com/nvim-telescope/telescope.nvim' },
-    { src = 'https://github.com/nvim-lua/plenary.nvim' },
+    { src = 'https://github.com/nvim-lua/plenary.nvim' }, -- required by neo-tree/telescope
     --
     { src = 'https://github.com/OXY2DEV/markview.nvim' },
     { src = 'https://github.com/folke/which-key.nvim' },
     { src = 'https://github.com/mrcjkb/haskell-tools.nvim' },
+    { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim' },
+    { src = 'https://github.com/MunifTanjim/nui.nvim' }, -- required by neo-tree
 }
 
 require('mason').setup()
@@ -56,6 +58,8 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>')
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)

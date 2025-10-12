@@ -12,3 +12,4 @@ configuration {
 
 /* TODO: how to pull straight from repo */
 @theme "~/.config/rofi/colorscheme.rasi"
+
